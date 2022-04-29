@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 module "github_oidc" {
-  source = "git::https://github.com/DNXLabs/terraform-aws-vcs-oidc.git"
+  source = "git::https://github.com/DNXLabs/terraform-aws-vcs-oidc.git?ref=0.1.0"
 
   identity_provider_url = "https://token.actions.githubusercontent.com"
   audiences = [
