@@ -1,4 +1,4 @@
-package validation
+package tests
 
 import (
 	"os"
@@ -47,5 +47,7 @@ func getValidationOptions(t *testing.T) *test_structure.ValidationOptions {
 	}
 
 	opts.ExcludeDirs = filteredDirs
+
+	return opts
 
 }
