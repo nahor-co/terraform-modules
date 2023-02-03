@@ -3,7 +3,7 @@ locals {
 }
 module "static_website" {
 
-    source = "../../"
+    source = "../."
 
     domain = "nahor.ml"
 
