@@ -1,5 +1,5 @@
 data "aws_route53_zone" "this" {
-  name = var.domain
+  name = var.hosted_zone_name != "" ? var.hosted_zone_name : var.domain
 }
 
 resource "aws_route53_record" "a_record" {

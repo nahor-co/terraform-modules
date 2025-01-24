@@ -3,6 +3,12 @@ variable "domain" {
   type        = string
 }
 
+variable "hosted_zone_name" {
+  description = "Name of hosted zone. Defaults to that of var.domain."
+  type = string
+  default = ""
+}
+
 variable "root_object" {
   description = "The object you want returned when user requests the root URL"
   type        = string
