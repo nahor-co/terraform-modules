@@ -33,6 +33,15 @@ resource "aws_cloudfront_distribution" "this" {
     target_origin_id = aws_s3_bucket.instance.bucket_regional_domain_name
 
     viewer_protocol_policy = "redirect-to-https"
+
+    dynamic "lambda_function_association" {
+      for_each = var.viewer_request_lambda_arn != "" ? ["force-loop"] : []
+      content {
+        event_type   = "viewer-request"
+        lambda_arn   = var.viewer_request_lambda_arn
+        include_body = false
+      }
+    }
   }
 
 }

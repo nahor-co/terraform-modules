@@ -20,3 +20,10 @@ variable "force_destroy" {
   type    = bool
   default = false
 }
+
+variable "viewer_request_lambda_arn" {
+  description = "Viewer request Lambda ARN."
+  type = string
+  default = ""
+  nullable = false
+}
